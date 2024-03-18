@@ -1,4 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/widgets.dart';
+import 'package:shopping_appilcation_ui/categories.dart';
+import 'package:shopping_appilcation_ui/widget/category_tile.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -17,6 +22,24 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        toolbarHeight: 100,
+        leading: null,
+        title: Text(
+          "Shoes",
+          style: TextStyle(fontSize: 25),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.notifications, size: 35),
+          ),
+          IconButton(
+              onPressed: () {}, icon: Icon(Icons.shopping_cart, size: 35))
+        ],
+      ),
+    );
   }
 }
