@@ -40,6 +40,25 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {}, icon: Icon(Icons.shopping_cart, size: 35))
         ],
       ),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.only(left: 10, top: 10),
+          child: Column(
+            children: [
+              Container(
+                height: 40,
+                child: ListView.builder(
+                    itemCount: Categories.values.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      final categories = Categories.values[index];
+                      return CategoryTile(categorynName: categories.name);
+                    }),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
