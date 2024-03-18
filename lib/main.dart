@@ -21,6 +21,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
+  String? tappedCategory;
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -52,7 +53,15 @@ class _HomePageState extends State<HomePage> {
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       final categories = Categories.values[index];
-                      return CategoryTile(categorynName: categories.name);
+                      return CategoryTile(
+                        categorynName: categories.name,
+                        isTapped: tappedCategory == categories.name,
+                        onTap: () {
+                          setState(() {
+                            tappedCategory = categories.name;
+                          });
+                        },
+                      );
                     }),
               ),
             ],
