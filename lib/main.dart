@@ -4,6 +4,7 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:shopping_appilcation_ui/categories.dart';
 import 'package:shopping_appilcation_ui/widget/category_tile.dart';
+import 'package:shopping_appilcation_ui/widget/item_tile.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -43,7 +44,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.only(left: 10, top: 10),
+          padding: EdgeInsets.only(left: 10, top: 10, right: 10),
           child: Column(
             children: [
               Container(
@@ -63,6 +64,37 @@ class _HomePageState extends State<HomePage> {
                         },
                       );
                     }),
+              ),
+              SizedBox(height: 20),
+              ItemTile(
+                image: 'assets/images/one.jpg',
+                category: Categories.Sneakers,
+                brand: 'Nike',
+                price: 100,
+              ),
+              ItemTile(
+                image: 'assets/images/two.jpg',
+                category: Categories.Sneakers,
+                brand: 'Nike',
+                price: 100,
+              ),
+              ItemTile(
+                image: 'assets/images/three.jpg',
+                category: Categories.Sneakers,
+                brand: 'Nike',
+                price: 100,
+              ),
+              ItemTile(
+                image: 'assets/images/five.jpg',
+                category: Categories.Sneakers,
+                brand: 'Nike',
+                price: 100,
+              ),
+              ItemTile(
+                image: 'assets/images/four.jpg',
+                category: Categories.Sneakers,
+                brand: 'Nike',
+                price: 100,
               ),
             ],
           ),
