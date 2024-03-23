@@ -161,6 +161,21 @@ class _ItemDetailState extends State<ItemDetail> {
                             ),
                           ],
                         ),
+                        SizedBox(height: 60),
+                        Container(
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "Buy Now",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 30),
                       ],
                     ),
                   ),
