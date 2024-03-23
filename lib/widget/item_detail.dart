@@ -103,6 +103,7 @@ class _ItemDetailState extends State<ItemDetail> {
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Text(
                           "Sneakers",
