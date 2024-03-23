@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:shopping_appilcation_ui/widget/category_tile.dart';
+import 'package:shopping_appilcation_ui/widget/item_detail.dart';
 
 import '../categories.dart';
 
@@ -26,9 +29,22 @@ class _ItemTileState extends State<ItemTile> {
   @override
   Widget build(BuildContext context) {
     return Hero(
-      tag: 'shoe',
+      tag: widget.id,
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ItemDetail(
+                id: widget.id,
+                image: widget.image,
+                category: widget.category,
+                brand: widget.brand,
+                price: widget.price.toDouble(),
+              ),
+            ),
+          );
+        },
         child: Container(
           padding: EdgeInsets.all(20),
           margin: EdgeInsets.only(bottom: 20, right: 10, left: 10),
