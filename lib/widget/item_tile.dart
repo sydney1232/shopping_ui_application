@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../categories.dart';
 
 class ItemTile extends StatefulWidget {
+  final int id;
   final String image;
   final Categories category;
   final String brand;
@@ -11,6 +12,7 @@ class ItemTile extends StatefulWidget {
 
   ItemTile(
       {super.key,
+      required this.id,
       required this.image,
       required this.category,
       required this.brand,
