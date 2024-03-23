@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:shopping_appilcation_ui/widget/size_button.dart';
 
 import '../categories.dart';
 
@@ -23,6 +24,8 @@ class ItemDetail extends StatefulWidget {
   @override
   State<ItemDetail> createState() => _ItemDetailState();
 }
+
+String? selectedSize;
 
 class _ItemDetailState extends State<ItemDetail> {
   @override
@@ -86,6 +89,7 @@ class _ItemDetailState extends State<ItemDetail> {
                   bottom: 0,
                   left: 0,
                   child: Container(
+                    padding: EdgeInsets.all(20),
                     height: 500,
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
@@ -97,8 +101,69 @@ class _ItemDetailState extends State<ItemDetail> {
                         ],
                       ),
                     ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Sneakers",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 50,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(height: 25),
+                        Text(
+                          "Size",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        Row(
+                          children: [
+                            SizeButton(
+                              size: "40",
+                              isSelected: selectedSize == "40",
+                              function: () {
+                                setState(() {
+                                  selectedSize = "40";
+                                });
+                              },
+                            ),
+                            SizeButton(
+                              size: "42",
+                              isSelected: selectedSize == "42",
+                              function: () {
+                                setState(() {
+                                  selectedSize = "42";
+                                });
+                              },
+                            ),
+                            SizeButton(
+                              size: "44",
+                              isSelected: selectedSize == "44",
+                              function: () {
+                                setState(() {
+                                  selectedSize = "44";
+                                });
+                              },
+                            ),
+                            SizeButton(
+                              size: "46",
+                              isSelected: selectedSize == "46",
+                              function: () {
+                                setState(() {
+                                  selectedSize = "46";
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                )
+                ),
               ],
             ),
           ),
